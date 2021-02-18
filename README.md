@@ -5,6 +5,4 @@ To run the application locally, please run the following command in the folder
 
 To run the application in firebase, please follow the instruction at https://console.firebase.google.com/
 
-To check the application running on firbase, please visit
-https://rps1-791f5.web.app/
-https://rps1-791f5.firebaseapp.com/
+To check the application running on firbase, please visit https://rps1-791f5.web.app/ or https://rps1-791f5.firebaseapp.com/
