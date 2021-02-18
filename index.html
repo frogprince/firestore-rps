@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-storage.js"></script>
+
+	<title>Rock-Paper-Scissors Game</title>
+</head>
+<body>
+
+	<!-- Header -->
+	<div id="header">
+				<div class="header-buttons-grid hide-when-signed-in">
+            <div>
+                <button id="sign-in-link-header" class="auth purple-button" auth="show-sign-in-form">Sign In</button>
+            </div>
+            <div>
+                <button id="create-user-link-header" class="auth purple-button" auth="show-create-user-form">Create User</button>
+            </div>
+        </div>
+
+				<div class="hide-when-signed-out hide" id="user-details-header">
+					<h1 id="display-name-header"></h1>
+				</div>
+	</div>
+	<!-- Modal -->
+	<div id="modal">
+		<div id="modal-content">
+			<button id="close">&times</button>
+			<!-- Authentication -->
+			<div id="authentication">
+				<!-- Create user form -->
+				<form id="create-user-form">
+					<div id="create-user-inputs">
+						<input type="text" id="create-user-display-name" placeholder="Display Name" required
+							autocomplete="off">
+						<input type="email" id="create-user-email" placeholder="Email" required autocomplete="off">
+						<input type="password" id="create-user-password" placeholder="Password" required
+							autocomplete="off">
+					</div>
+					<button id="create-user-button" class="purple-button" type="submit">Create User</button>
+				</form>
+
+				<!-- Sign in form -->
+				<form id="sign-in-form">
+					<div id="sign-in-inputs">
+						<input type="email" id="sign-in-email" placeholder="Email" required autocomplete="off">
+						<input type="password" id="sign-in-password" placeholder="Password" required autocomplete="off">
+					</div>
+					<button id="sign-in-button" class="purple-button" type="submit">Sign In</button>
+				</form>
+
+				<!-- display error messages -->
+				<div id="auth-message"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="container" class="hide-when-signed-out hide">
+		<div id="user-options">
+			<div>Hello <span id="name"></span></div>
+			<div id="change-name">Sign Out</div>
+			<h2>Your Points: <span id="points"></span></h2>
+		</div>
+
+
+		<p><b>Please select your choice below</b></p>
+		<button class="green-button" id="rock"><img src="https://firebasestorage.googleapis.com/v0/b/rps1-791f5.appspot.com/o/rock.jpg?alt=media&token=3485b870-fc79-425d-9b5f-43849d7bb71a"></button>
+	  <button class="green-button" id="paper"><img src="https://firebasestorage.googleapis.com/v0/b/rps1-791f5.appspot.com/o/paper.jpg?alt=media&token=5b71ddb0-a0e0-4001-bef2-cfec9e4b15b7"></button>
+	  <button class="green-button" id="scissors"><img src="https://firebasestorage.googleapis.com/v0/b/rps1-791f5.appspot.com/o/scissors.jpg?alt=media&token=b9ceadaa-312a-411b-8f23-0260049ea7a8"></button>
+	  <p>Your Choice: <userInput></userInput></p>
+		<userInputUrl></userInputUrl>
+
+		<div>
+			<div>Game Number: <span id="gameNumber"></span></div>
+			<div>Countdown: <span id="counter"></span></div>
+			<div>Game Status: <span id="status"></span></div>
+		</div>
+
+		<hr class="rounded">
+
+		<table id="messages" align="right"></table>
+	</div>
+
+	<script src="app.js"></script>
+	<script src="button_function.js"></script>
+</body>
+</html>
